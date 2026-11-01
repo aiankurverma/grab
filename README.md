@@ -1,6 +1,6 @@
 # Grab
 
-A high-performance, multi-platform media converter and downloader built with Next.js 16, Python 3.13 FastAPI, and Inception Labs Mercury-3 AI.
+A high-performance, multi-platform media converter and downloader built with Next.js 16, Python 3.13 FastAPI, and AI-powered metadata enrichment.
 
 Grab supports 11 major platforms with smart format auto-detection, instant downloads, live administrative control switches, and Cloudinary media feeds.
 
@@ -16,11 +16,10 @@ Grab supports 11 major platforms with smart format auto-detection, instant downl
   - **Live Active People Counter**: Real-time heartbeat tracking active users.
   - **3-Lines Hamburger Drawer**: Slide-over control panel on the left side of the admin dashboard.
   - **Emergency Killswitches**: Instantly disable or enable any individual platform if it experiences outages or rate limits.
-  - **AI Engine Toggle**: Turn Mercury-3 AI enrichment on or off dynamically.
+  - **AI Engine Toggle**: Turn AI metadata enrichment on or off dynamically.
   - **Persistent State**: Control switches are saved directly to disk and stay persistent across browser reloads and restarts.
   - **Historical Activity Feed**: Filter by platform, search by title or job ID, with complete pagination (5, 10, 20, 50 per page) and Cloudinary media preview links.
-- **Mercury-3 AI Enrichment**:
-  - Powered by Inception Labs `mercury-3` model.
+- **AI Metadata Enrichment**:
   - Automatically extracts concise summaries, high-relevance tags, chapters, and language metadata in a non-blocking background queue.
 
 ---
@@ -33,7 +32,7 @@ flowchart TD
     Web --> DB[("🐘 PostgreSQL (Prisma)")]
     Web --> Worker["🐍 Python 3.13 Worker (apps/worker)"]
     Worker --> YTDLP["✕ Core Downloader"]
-    Worker --> Mercury["🧠 Mercury-3 AI (Inception Labs)"]
+    Worker --> Mercury["🧠 AI Enrichment Engine"]
     Worker --> Cloudinary["☁️ Cloudinary Storage"]
     Cloudinary --> Web
 ```
@@ -42,7 +41,7 @@ flowchart TD
 |---|---|---|
 | **Web Service** | Next.js 16 (App Router), React 19, Tailwind CSS, Prisma | `apps/web/` |
 | **Worker Service** | Python 3.13, FastAPI | `apps/worker/` |
-| **AI Engine** | Inception Labs Mercury-3 (`/v1/chat/completions`) | `apps/worker/app/infrastructure/ai/` |
+| **AI Engine** | Deep Metadata Enrichment | `apps/worker/app/infrastructure/ai/` |
 | **Admin Panel** | Server-Sent Heartbeats, Slide-Over Controls Drawer | `apps/web/src/app/admin/insights/` |
 
 ---
@@ -98,10 +97,10 @@ CLOUDINARY_API_SECRET=your_api_secret
 ```env
 INTERNAL_TOKEN=your_secure_internal_token
 WEB_URL=http://127.0.0.1:3000
-AI_PROVIDER=mercury
-AI_MODEL=mercury-3
-AI_API_BASE=https://api.inceptionlabs.ai/v1
-INCEPTION_API_KEY=your_inception_key
+AI_PROVIDER=ai_provider
+AI_MODEL=ai_model
+AI_API_BASE=https://api.your-ai-provider.com/v1
+INCEPTION_API_KEY=your_ai_api_key
 CLOUDINARY_CLOUD_NAME=your_cloud_name
 CLOUDINARY_API_KEY=your_api_key
 CLOUDINARY_API_SECRET=your_api_secret
