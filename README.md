@@ -1,12 +1,12 @@
-# Grab ⚡
+# Grab
 
-A high-performance, multi-platform media converter and downloader built with **Next.js 16**, **Python 3.13 FastAPI**, **yt-dlp**, and **Inception Labs Mercury-3 AI**.
+A high-performance, multi-platform media converter and downloader built with Next.js 16, Python 3.13 FastAPI, yt-dlp, and Inception Labs Mercury-3 AI.
 
 Grab supports 11 major platforms with smart format auto-detection, instant downloads, live administrative control switches, and Cloudinary media feeds.
 
 ---
 
-## 🚀 Key Features
+## Features
 
 - **Multi-Platform Support**: YouTube, Pinterest, Instagram, TikTok, Facebook, X (Twitter), Reddit, SoundCloud, Twitch, Vimeo, and Dailymotion.
 - **Smart Format Auto-Detection**:
@@ -15,10 +15,10 @@ Grab supports 11 major platforms with smart format auto-detection, instant downl
 - **Real-Time Admin Insights & Live Controls**:
   - **Live Active People Counter**: Real-time heartbeat tracking active users.
   - **3-Lines Hamburger Drawer**: Slide-over control panel on the left side of the admin dashboard.
-  - **Emergency Killswitches**: Instantly disable/enable any individual platform if it experiences outages or rate limits.
+  - **Emergency Killswitches**: Instantly disable or enable any individual platform if it experiences outages or rate limits.
   - **AI Engine Toggle**: Turn Mercury-3 AI enrichment on or off dynamically.
   - **Persistent State**: Control switches are saved directly to disk and stay persistent across browser reloads and restarts.
-  - **Historical Activity Feed**: Filter by platform, search by title/job ID, with complete pagination (5, 10, 20, 50 per page) and Cloudinary media preview links.
+  - **Historical Activity Feed**: Filter by platform, search by title or job ID, with complete pagination (5, 10, 20, 50 per page) and Cloudinary media preview links.
 - **Mercury-3 AI Enrichment**:
   - Powered by Inception Labs `mercury-3` model.
   - Automatically extracts concise summaries, high-relevance tags, chapters, and language metadata in a non-blocking background queue.
@@ -27,16 +27,16 @@ Grab supports 11 major platforms with smart format auto-detection, instant downl
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ```mermaid
 flowchart TD
-    User["🌐 User / Browser"] --> Web["⚡ Next.js 16 App Router (apps/web)"]
-    Web --> DB[("🐘 PostgreSQL (Prisma)")]
-    Web --> Worker["🐍 Python 3.13 Worker (apps/worker)"]
-    Worker --> YTDLP["📥 yt-dlp & FFmpeg"]
-    Worker --> Mercury["🧠 Mercury-3 AI (Inception Labs)"]
-    Worker --> Cloudinary["☁️ Cloudinary Storage"]
+    User["User / Browser"] --> Web["Next.js 16 App Router (apps/web)"]
+    Web --> DB[("PostgreSQL (Prisma)")]
+    Web --> Worker["Python 3.13 Worker (apps/worker)"]
+    Worker --> YTDLP["yt-dlp & FFmpeg"]
+    Worker --> Mercury["Mercury-3 AI (Inception Labs)"]
+    Worker --> Cloudinary["Cloudinary Storage"]
     Cloudinary --> Web
 ```
 
@@ -49,7 +49,7 @@ flowchart TD
 
 ---
 
-## 🛠️ Getting Started Locally
+## Getting Started Locally
 
 ### 1. Prerequisites
 - **Node.js**: 20.x or higher
@@ -126,25 +126,25 @@ The web app will be available at **`http://localhost:3000`**.
 
 ---
 
-## 🔐 Admin Insights & Control Panel
+## Admin Insights & Control Panel
 
 Access the Admin Insights panel at:
 ```text
 http://localhost:3000/admin/insights?key=<YOUR_ADMIN_SECRET>
 ```
 
-- **Top-left `☰` Button**: Opens the left slide-over drawer to toggle any of the 11 platforms or the AI enrichment engine.
+- **Top-left Menu Button**: Opens the left slide-over drawer to toggle any of the 11 platforms or the AI enrichment engine.
 - **Live Active Counter**: Displays the current concurrent active visitors.
 - **History Table**: Platform-filtered activity with Cloudinary asset links and pagination.
 
 ---
 
-## 🚢 Render Deployment (Blueprint)
+## Render Deployment
 
-Deploy in 5 simple steps using Render Blueprints:
+Deploy using Render Blueprints:
 
 1. Push your repository to GitHub.
-2. In the [Render Dashboard](https://dashboard.render.com/), click **New +** $\rightarrow$ **Blueprint**.
+2. In the [Render Dashboard](https://dashboard.render.com/), click **New +** -> **Blueprint**.
 3. Select your repository (`grab`). Render will detect `render.yaml`.
 4. Configure the environment variables (`DATABASE_URL`, `INTERNAL_TOKEN`, `ADMIN_SECRET`, `CLOUDINARY_*`, `INCEPTION_API_KEY`).
 5. Click **Apply** to provision `grabwave-postgres`, `grabwave-worker`, and `grabwave-web`.
@@ -156,6 +156,6 @@ pnpm --filter web prisma migrate deploy
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License.
