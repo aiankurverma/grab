@@ -29,9 +29,12 @@ venv/
 .ruff_cache/
 
 # media / temp
-tmp/
-media/
-downloads/
+/tmp/
+/media/
+/downloads/
+apps/worker/media/
+apps/worker/downloads/
+!apps/web/src/lib/media/
 *.mp3
 *.mp4
 *.m4a
