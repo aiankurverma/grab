@@ -22,8 +22,6 @@ Grab supports 11 major platforms with smart format auto-detection, instant downl
 - **Mercury-3 AI Enrichment**:
   - Powered by Inception Labs `mercury-3` model.
   - Automatically extracts concise summaries, high-relevance tags, chapters, and language metadata in a non-blocking background queue.
-- **Production-Ready Deployment**:
-  - Includes a turnkey `render.yaml` Blueprint for 1-click deployment on Render (Web + Worker + PostgreSQL).
 
 ---
 
@@ -31,12 +29,12 @@ Grab supports 11 major platforms with smart format auto-detection, instant downl
 
 ```mermaid
 flowchart TD
-    User["User / Browser"] --> Web["Next.js 16 App Router (apps/web)"]
-    Web --> DB[("PostgreSQL (Prisma)")]
-    Web --> Worker["Python 3.13 Worker (apps/worker)"]
-    Worker --> YTDLP["yt-dlp & FFmpeg"]
-    Worker --> Mercury["Mercury-3 AI (Inception Labs)"]
-    Worker --> Cloudinary["Cloudinary Storage"]
+    User["🌐 User / Browser"] --> Web["⚡ Next.js 16 App Router (apps/web)"]
+    Web --> DB[("🐘 PostgreSQL (Prisma)")]
+    Web --> Worker["🐍 Python 3.13 Worker (apps/worker)"]
+    Worker --> YTDLP["📥 yt-dlp & FFmpeg"]
+    Worker --> Mercury["🧠 Mercury-3 AI (Inception Labs)"]
+    Worker --> Cloudinary["☁️ Cloudinary Storage"]
     Cloudinary --> Web
 ```
 
@@ -136,23 +134,6 @@ http://localhost:3000/admin/insights?key=<YOUR_ADMIN_SECRET>
 - **Top-left Menu Button**: Opens the left slide-over drawer to toggle any of the 11 platforms or the AI enrichment engine.
 - **Live Active Counter**: Displays the current concurrent active visitors.
 - **History Table**: Platform-filtered activity with Cloudinary asset links and pagination.
-
----
-
-## Render Deployment
-
-Deploy using Render Blueprints:
-
-1. Push your repository to GitHub.
-2. In the [Render Dashboard](https://dashboard.render.com/), click **New +** -> **Blueprint**.
-3. Select your repository (`grab`). Render will detect `render.yaml`.
-4. Configure the environment variables (`DATABASE_URL`, `INTERNAL_TOKEN`, `ADMIN_SECRET`, `CLOUDINARY_*`, `INCEPTION_API_KEY`).
-5. Click **Apply** to provision `grabwave-postgres`, `grabwave-worker`, and `grabwave-web`.
-
-Once deployed, run Prisma migrations in the web service shell:
-```bash
-pnpm --filter web prisma migrate deploy
-```
 
 ---
 
