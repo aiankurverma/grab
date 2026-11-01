@@ -6,7 +6,6 @@ const PRODUCT = [
   ["Converter", "/"],
   ["Supported platforms", "/platforms"],
   ["Format guide", "/formats"],
-  ["How it works", "/how-it-works"],
   ["Questions & FAQ", "/faq"],
   ["Recent history", "/history"],
 ] as const;

@@ -331,14 +331,6 @@ export default function HomePage() {
           eyebrow="How it works"
           title="Three steps. No tutorial needed."
           body="The converter reads the link first, so you always know what the source can provide before a job starts."
-          action={
-            <Link
-              href="/how-it-works"
-              className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold text-white transition hover:border-wave/40 hover:bg-wave/10"
-            >
-              See detailed guide <span aria-hidden="true">→</span>
-            </Link>
-          }
         />
         <div className="relative mt-9 grid gap-4 sm:grid-cols-3">
           <div

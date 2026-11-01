@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 const LINKS = [
   ["Platforms", "/platforms"],
   ["Formats", "/formats"],
-  ["How it works", "/how-it-works"],
   ["Questions", "/faq"],
   ["Recent History", "/history"],
 ] as const;

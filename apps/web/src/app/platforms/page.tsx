@@ -55,70 +55,72 @@ export default function PlatformsPage() {
       </section>
 
       <section className="relative mx-auto w-full max-w-6xl px-4 pb-16 sm:px-6">
-        <div className="overflow-hidden rounded-2xl border border-line bg-ink-soft/50">
-          <div className="hidden grid-cols-[1.5fr_0.8fr_0.8fr_0.7fr_auto] gap-4 border-b border-line px-5 py-3 text-[10px] font-bold uppercase tracking-[0.18em] text-mist/60 sm:grid">
-            <span>Platform</span>
-            <span>Formats</span>
-            <span>Max quality</span>
-            <span>Status</span>
-            <span className="text-right">Action</span>
-          </div>
+        <div className="overflow-x-auto rounded-2xl border border-line bg-ink-soft/50 shadow-sm">
+          <div className="min-w-[720px]">
+            <div className="hidden grid-cols-[2fr_1fr_1fr_0.8fr_180px] items-center gap-4 border-b border-line px-5 py-3.5 text-[10px] font-bold uppercase tracking-[0.18em] text-mist/60 sm:grid">
+              <span>Platform</span>
+              <span>Formats</span>
+              <span>Max quality</span>
+              <span>Status</span>
+              <span className="text-right">Action</span>
+            </div>
 
-          {PLATFORM_LIST.map((platform) => (
-            <div
-              key={platform.id}
-              id={platform.id.toLowerCase()}
-              className="scroll-mt-24 border-b border-line/70 px-4 py-4 transition last:border-b-0 hover:bg-white/[0.02] sm:grid sm:grid-cols-[1.5fr_0.8fr_0.8fr_0.7fr_auto] sm:items-center sm:gap-4 sm:px-5"
-            >
-              <div className="flex items-center gap-3">
-                <PlatformMark platform={platform.id} />
-                <div className="min-w-0">
-                  <p className="text-sm font-semibold text-white">{platform.label}</p>
-                  <p className="mt-0.5 text-[11px] leading-relaxed text-mist sm:hidden">
-                    {platform.formats.map((item) => item.toUpperCase()).join(" · ")} ·{" "}
-                    {platformCapability(platform)}
-                  </p>
-                  <p className="mt-0.5 hidden max-w-xs text-[11px] leading-relaxed text-mist sm:block">
-                    {platform.note}
-                  </p>
+            {PLATFORM_LIST.map((platform) => (
+              <div
+                key={platform.id}
+                id={platform.id.toLowerCase()}
+                className="scroll-mt-24 border-b border-line/70 px-4 py-4 transition last:border-b-0 hover:bg-white/[0.02] sm:grid sm:grid-cols-[2fr_1fr_1fr_0.8fr_180px] sm:items-center sm:gap-4 sm:px-5"
+              >
+                <div className="flex items-center gap-3">
+                  <PlatformMark platform={platform.id} />
+                  <div className="min-w-0">
+                    <p className="text-sm font-semibold text-white">{platform.label}</p>
+                    <p className="mt-0.5 text-[11px] leading-relaxed text-mist sm:hidden">
+                      {platform.formats.map((item) => item.toUpperCase()).join(" · ")} ·{" "}
+                      {platformCapability(platform)}
+                    </p>
+                    <p className="mt-0.5 hidden max-w-xs text-[11px] leading-relaxed text-mist sm:block">
+                      {platform.note}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-3 flex items-center gap-1.5 sm:mt-0">
+                  {platform.formats.map((format) => (
+                    <span
+                      key={format}
+                      className="rounded-md border border-line bg-ink px-2 py-0.5 text-[10px] font-semibold uppercase text-white/80"
+                    >
+                      {format}
+                    </span>
+                  ))}
+                </div>
+
+                <p className="mt-2 text-[11px] text-mist sm:mt-0">{platformCapability(platform)}</p>
+
+                <div className="mt-2 flex items-center sm:mt-0">
+                  <span
+                    className={`inline-flex rounded-full border px-2.5 py-0.5 text-[9px] font-bold uppercase tracking-wider ${
+                      platform.beta
+                        ? "border-amber-400/20 bg-amber-400/10 text-amber-200"
+                        : "border-grab/20 bg-grab/10 text-grab"
+                    }`}
+                  >
+                    {platform.beta ? "Beta" : "Stable"}
+                  </span>
+                </div>
+
+                <div className="mt-3 flex sm:mt-0 sm:justify-end">
+                  <Link
+                    href="/"
+                    className="inline-flex items-center justify-center rounded-lg border border-line bg-ink px-3 py-1.5 text-[11px] font-semibold text-mist whitespace-nowrap transition hover:border-wave/40 hover:text-white"
+                  >
+                    Try a {platform.label} link
+                  </Link>
                 </div>
               </div>
-
-              <div className="mt-3 flex items-center gap-2 sm:mt-0">
-                {platform.formats.map((format) => (
-                  <span
-                    key={format}
-                    className="rounded-md border border-line bg-ink px-2 py-1 text-[10px] font-semibold uppercase text-white/80"
-                  >
-                    {format}
-                  </span>
-                ))}
-              </div>
-
-              <p className="mt-2 text-[11px] text-mist sm:mt-0">{platformCapability(platform)}</p>
-
-              <div className="mt-2 sm:mt-0">
-                <span
-                  className={`inline-flex rounded-full border px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider ${
-                    platform.beta
-                      ? "border-amber-400/20 bg-amber-400/10 text-amber-200"
-                      : "border-grab/20 bg-grab/10 text-grab"
-                  }`}
-                >
-                  {platform.beta ? "Beta" : "Stable"}
-                </span>
-              </div>
-
-              <div className="mt-3 sm:mt-0 sm:text-right">
-                <Link
-                  href="/"
-                  className="inline-flex rounded-lg border border-line bg-ink px-3 py-2 text-[11px] font-semibold text-mist transition hover:border-wave/40 hover:text-white"
-                >
-                  Try a {platform.label} link
-                </Link>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 

@@ -103,7 +103,10 @@ const technicalFaqs = [
   },
 ];
 
+import { notFound } from "next/navigation";
+
 export default function HowItWorksPage() {
+  notFound();
   return (
     <main className="relative overflow-hidden">
       <SiteHeader />

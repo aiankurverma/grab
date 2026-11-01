@@ -19,9 +19,6 @@ export function SiteHeader() {
           <Link className="transition hover:text-white" href="/formats">
             Formats
           </Link>
-          <Link className="transition hover:text-white" href="/how-it-works">
-            How it works
-          </Link>
           <Link className="transition hover:text-white" href="/faq">
             Questions
           </Link>

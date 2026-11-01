@@ -7,7 +7,6 @@ const ROUTES = [
   "/",
   "/platforms",
   "/formats",
-  "/how-it-works",
   "/faq",
   "/history",
   "/login",
