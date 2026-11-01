@@ -30,6 +30,11 @@ BASE_OPTIONS: dict[str, object] = {
     "fragment_retries": 3,
     "concurrent_fragment_downloads": 4,
     "cachedir": False,
+    "extractor_args": {
+        "youtube": {
+            "player_client": ["android", "ios", "mweb", "web"]
+        }
+    },
 }
 
 _SAFE_HEADERS = {
@@ -126,11 +131,23 @@ def _first_entry(info: dict[str, object]) -> dict[str, object]:
     return entries[0]
 
 
+def _clean_youtube_url(url: str) -> str:
+    if "youtube.com/watch" in url and "v=" in url:
+        import urllib.parse
+        parsed = urllib.parse.urlparse(url)
+        params = urllib.parse.parse_qs(parsed.query)
+        v = params.get("v")
+        if v and v[0]:
+            return f"https://www.youtube.com/watch?v={v[0]}"
+    return url
+
+
 class YtDlpProber:
     def __init__(self, options: dict[str, object] | None = None) -> None:
         self._options = {**BASE_OPTIONS, **(options or {})}
 
     def _extract(self, url: str, *, client: str | None = None) -> dict[str, object]:
+        url = _clean_youtube_url(url)
         cache_key = f"{url}|{client or 'default'}"
         cached = _cache_get(cache_key)
         if cached is not None:
@@ -138,8 +155,20 @@ class YtDlpProber:
         options: dict[str, object] = {**self._options, "skip_download": True}
         if client:
             options["extractor_args"] = {"youtube": {"player_client": [client]}}
-        with yt_dlp.YoutubeDL(options) as ydl:
-            info = ydl.extract_info(url, download=False)
+        try:
+            with yt_dlp.YoutubeDL(options) as ydl:
+                info = ydl.extract_info(url, download=False)
+        except Exception:
+            if not client:
+                fallback_opts = {
+                    **self._options,
+                    "skip_download": True,
+                    "extractor_args": {"youtube": {"player_client": ["android", "ios"]}},
+                }
+                with yt_dlp.YoutubeDL(fallback_opts) as ydl:
+                    info = ydl.extract_info(url, download=False)
+            else:
+                raise
         if info is None:
             raise RuntimeError("no media info returned")
         _cache_set(cache_key, info)
@@ -349,6 +378,7 @@ class YtDlpDownloader:
         destination: Path,
         on_progress: ProgressCallback,
     ) -> DownloadedFile:
+        url = _clean_youtube_url(url)
         destination.mkdir(parents=True, exist_ok=True)
 
         if fmt in (Format.JPG, Format.PNG):
@@ -384,6 +414,19 @@ class YtDlpDownloader:
             content_type = AUDIO_MIME if fmt is Format.MP3 else VIDEO_MIME
             return DownloadedFile(path=source, content_type=content_type, size_bytes=source.stat().st_size)
         except Exception:
+            try:
+                fallback_opts = {
+                    **options,
+                    "extractor_args": {"youtube": {"player_client": ["android", "ios"]}},
+                }
+                with yt_dlp.YoutubeDL(fallback_opts) as ydl:
+                    ydl.extract_info(url, download=True)
+                source = _find_source(destination)
+                content_type = AUDIO_MIME if fmt is Format.MP3 else VIDEO_MIME
+                return DownloadedFile(path=source, content_type=content_type, size_bytes=source.stat().st_size)
+            except Exception:
+                pass
+
             if is_pinterest_url(url):
                 scraped = scrape_pinterest_image(url)
                 if scraped:
