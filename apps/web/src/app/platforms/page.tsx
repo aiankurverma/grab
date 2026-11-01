@@ -10,10 +10,10 @@ import { PLATFORM_LIST, platformCapability } from "@/lib/platforms";
 export const metadata: Metadata = {
   title: "Supported Platforms · 11 Sites Compatibility Matrix",
   description:
-    "The full Grab support matrix: YouTube, Instagram, TikTok, Facebook, X, Vimeo, SoundCloud, Reddit, Twitch clips, Dailymotion, and Pinterest.",
+    "The full MediaRift support matrix: YouTube, Instagram, TikTok, Facebook, X, Vimeo, SoundCloud, Reddit, Twitch clips, Dailymotion, and Pinterest.",
   alternates: { canonical: "/platforms" },
   openGraph: {
-    title: "Grab Supported Platforms Matrix",
+    title: "MediaRift Supported Platforms Matrix",
     description: "Formats and quality capabilities across YouTube, TikTok, Instagram, and 8 more sites.",
     url: "/platforms",
     type: "website",
@@ -38,7 +38,7 @@ export default function PlatformsPage() {
       <section className="relative mx-auto w-full max-w-6xl px-4 pb-12 pt-12 sm:px-6 sm:pt-16">
         <SectionHeading
           eyebrow="Support matrix"
-          title="What Grab can read."
+          title="What MediaRift can read."
           body="Support depends on the public source, not on a promise. Each platform lists the formats and maximum quality we target, plus its stability status."
         />
         <div className="mt-6 flex flex-wrap items-center justify-center gap-2 text-[11px]">
@@ -155,7 +155,7 @@ export default function PlatformsPage() {
           Your platform is on the list?
         </h2>
         <p className="mx-auto mt-3 max-w-lg text-sm leading-relaxed text-mist">
-          Paste the public link. Grab will show the formats and quality that link can actually
+          Paste the public link. MediaRift will show the formats and quality that link can actually
           provide before you start.
         </p>
         <Link

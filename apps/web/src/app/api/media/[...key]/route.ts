@@ -80,7 +80,7 @@ async function serve(
     const info = await stat(/* turbopackIgnore: true */ filePath);
     if (!info.isFile()) throw new Error("not a file");
     const extension = path.extname(filePath).toLowerCase();
-    const filename = `grabwave-${path.basename(key)}`;
+    const filename = `mediarift-${path.basename(key)}`;
     const range = parseRange(request.headers.get("range"), info.size);
 
     if (request.headers.get("range") && !range) {

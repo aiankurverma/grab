@@ -8,12 +8,12 @@ import { SectionHeading } from "@/components/ui/section-heading";
 export const metadata: Metadata = {
   title: "How It Works · 3 Steps to Clean Media",
   description:
-    "Learn how Grab transforms public video and track links into clean MP3 and MP4 files. Read about our probe engine, instant extraction, and 6-hour privacy guarantee.",
+    "Learn how MediaRift transforms public video and track links into clean MP3 and MP4 files. Read about our probe engine, instant extraction, and 6-hour privacy guarantee.",
   alternates: { canonical: "/how-it-works" },
   openGraph: {
-    title: "How Grab Works — Clean 3-Step Media Conversion",
+    title: "How MediaRift Works — Clean 3-Step Media Conversion",
     description:
-      "No fake buttons, no shady redirects. See how Grab detects sources, extracts streams, and delivers temporary private files.",
+      "No fake buttons, no shady redirects. See how MediaRift detects sources, extracts streams, and delivers temporary private files.",
     url: "/how-it-works",
     type: "website",
   },
@@ -87,15 +87,15 @@ const safetyGuarantees = [
 const technicalFaqs = [
   {
     q: "Why do download links expire after six hours?",
-    a: "Grab is designed as a temporary transit pipeline, not a cloud locker. Automatically deleting files keeps operating overhead low, prevents stale data leakage, and ensures your converted media stays strictly private.",
+    a: "MediaRift is designed as a temporary transit pipeline, not a cloud locker. Automatically deleting files keeps operating overhead low, prevents stale data leakage, and ensures your converted media stays strictly private.",
   },
   {
     q: "What is the difference between Instant Download and normal Conversion?",
     a: "Instant Download triggers when the source platform hosts an intact video/audio stream matching your chosen resolution (common with TikTok, Instagram Reels, and original M4A audio). It streams directly without re-encoding delays. When merging separate video and audio streams is required (like YouTube 1080p), our converter handles it in the background.",
   },
   {
-    q: "Why does Grab refuse private accounts or live streams?",
-    a: "We only support publicly accessible media that you have permission to download. Private posts, member-only videos, paid content, and live streams require proprietary credentials or continuous stream capture, which Grab deliberately does not support.",
+    q: "Why does MediaRift refuse private accounts or live streams?",
+    a: "We only support publicly accessible media that you have permission to download. Private posts, member-only videos, paid content, and live streams require proprietary credentials or continuous stream capture, which MediaRift deliberately does not support.",
   },
   {
     q: "How many conversions do I get each day?",
@@ -117,7 +117,7 @@ export default function HowItWorksPage() {
         <SectionHeading
           eyebrow="Workflow & Architecture"
           title="Three steps. Built like a tool, not a trap."
-          body="Downloading a public video should never require dodging malicious popups, fake download buttons, or mystery installers. Here is the exact pipeline Grab runs when you paste a link."
+          body="Downloading a public video should never require dodging malicious popups, fake download buttons, or mystery installers. Here is the exact pipeline MediaRift runs when you paste a link."
         />
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-2 text-xs">
@@ -185,7 +185,7 @@ export default function HowItWorksPage() {
               Under the hood
             </h2>
             <p className="mx-auto mt-2 max-w-xl text-sm leading-relaxed text-mist">
-              How Grab turns your public link into a clean file while keeping your device safe.
+              How MediaRift turns your public link into a clean file while keeping your device safe.
             </p>
           </div>
 

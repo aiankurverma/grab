@@ -24,25 +24,25 @@ export const FAQ_DATA: FAQItem[] = [
   {
     id: "sites-supported",
     category: "platforms",
-    question: "Which platforms and sites does Grab support?",
+    question: "Which platforms and sites does MediaRift support?",
     answer:
-      "Grab currently supports 11 platforms: YouTube (Videos & Shorts), Instagram (Reels & public posts), TikTok, Facebook (public videos & Reels), X / Twitter, Vimeo, SoundCloud, Reddit, Twitch clips, Dailymotion, and Pinterest video pins. We only process public links that you own or have explicit permission to access.",
+      "MediaRift currently supports 11 platforms: YouTube (Videos & Shorts), Instagram (Reels & public posts), TikTok, Facebook (public videos & Reels), X / Twitter, Vimeo, SoundCloud, Reddit, Twitch clips, Dailymotion, and Pinterest video pins. We only process public links that you own or have explicit permission to access.",
     tags: ["youtube", "tiktok", "instagram", "soundcloud", "vimeo", "reddit", "platforms"],
   },
   {
     id: "is-it-free",
     category: "general",
-    question: "Is Grab free to use?",
+    question: "Is MediaRift free to use?",
     answer:
-      "Yes. Grab is 100% free to try. Anonymous visitors get a daily quota while we are in beta. We do not require credit cards, trial subscriptions, or sign-ups to convert public media.",
+      "Yes. MediaRift is 100% free to try. Anonymous visitors get a daily quota while we are in beta. We do not require credit cards, trial subscriptions, or sign-ups to convert public media.",
     tags: ["pricing", "cost", "free", "quota", "account", "trial"],
   },
   {
     id: "fake-buttons",
     category: "general",
-    question: "Why does Grab have no popups or fake download buttons?",
+    question: "Why does MediaRift have no popups or fake download buttons?",
     answer:
-      "Most media downloaders monetize via deceptive ad networks, installing unwanted browser extensions or redirecting users through adware loops. Grab was engineered as a professional, developer-grade utility: one paste field, one honest convert button, and one direct download.",
+      "Most media downloaders monetize via deceptive ad networks, installing unwanted browser extensions or redirecting users through adware loops. MediaRift was engineered as a professional, developer-grade utility: one paste field, one honest convert button, and one direct download.",
     tags: ["ads", "popups", "clean", "safety", "virus", "redirects"],
   },
   {
@@ -66,7 +66,7 @@ export const FAQ_DATA: FAQItem[] = [
     category: "formats",
     question: "Can I download videos in 4K resolution?",
     answer:
-      "Yes, provided the original video was filmed and published in 4K (2160p) and the host platform exposes the 4K stream (such as YouTube and Vimeo). Grab never synthesizes fake 4K pixels—we inspect the source manifest and offer authentic heights up to 2160p.",
+      "Yes, provided the original video was filmed and published in 4K (2160p) and the host platform exposes the 4K stream (such as YouTube and Vimeo). MediaRift never synthesizes fake 4K pixels—we inspect the source manifest and offer authentic heights up to 2160p.",
     tags: ["4k", "resolution", "1080p", "uhd", "video quality", "upscale"],
   },
   {
@@ -90,7 +90,7 @@ export const FAQ_DATA: FAQItem[] = [
     category: "platforms",
     question: "Can I download from private accounts or login-walled posts?",
     answer:
-      "No. Grab strictly operates on publicly available media. We do not accept user credentials, bypass Instagram 'Close Friends' gates, or extract member-only Patreon/YouTube content.",
+      "No. MediaRift strictly operates on publicly available media. We do not accept user credentials, bypass Instagram 'Close Friends' gates, or extract member-only Patreon/YouTube content.",
     tags: ["private", "login", "password", "drm", "paywall", "subscribers"],
   },
   {
@@ -130,7 +130,7 @@ export const FAQ_DATA: FAQItem[] = [
     category: "troubleshooting",
     question: "Are audio and video properly synced in 1080p MP4 files?",
     answer:
-      "Yes. Unlike naive downloaders that grab separate video-only streams (resulting in silent 1080p video), Grab seamlessly multiplexes the best available video track and audio track into a single universally compatible H.264/AAC MP4 container.",
+      "Yes. Unlike naive downloaders that grab separate video-only streams (resulting in silent 1080p video), MediaRift seamlessly multiplexes the best available video track and audio track into a single universally compatible H.264/AAC MP4 container.",
     tags: ["sync", "audio video sync", "no sound", "silent video", "1080p"],
   },
 ];

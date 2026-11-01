@@ -5,7 +5,7 @@ import { AuthShell } from "@/components/auth/auth-shell";
 
 export const metadata: Metadata = {
   title: "Create an account",
-  description: "Grab accounts are coming soon. Convert public links from 11 supported platforms without signing in.",
+  description: "MediaRift accounts are coming soon. Convert public links from 11 supported platforms without signing in.",
 };
 
 const benefits = [

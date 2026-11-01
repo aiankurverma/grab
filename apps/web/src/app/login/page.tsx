@@ -5,7 +5,7 @@ import { AuthShell } from "@/components/auth/auth-shell";
 
 export const metadata: Metadata = {
   title: "Log in",
-  description: "Grab accounts are coming soon. Convert public links from 11 supported platforms without signing in.",
+  description: "MediaRift accounts are coming soon. Convert public links from 11 supported platforms without signing in.",
 };
 
 export default function LoginPage() {

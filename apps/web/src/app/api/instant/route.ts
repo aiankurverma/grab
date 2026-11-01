@@ -93,7 +93,7 @@ export async function POST(request: Request) {
           : parsed.data.format === "jpg"
             ? "jpg"
             : "mp4";
-    const filename = safeDownloadName(media.title ?? "grabwave-download", extension);
+    const filename = safeDownloadName(media.title ?? "mediarift-download", extension);
     const { token, expiresAt } = signInstant({
       u: media.directUrl,
       h: media.headers ?? {},

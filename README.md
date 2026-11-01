@@ -1,8 +1,8 @@
-# Grab
+# MediaRift
 
 A high-performance, multi-platform media converter and downloader built with Next.js 16, Python 3.13 FastAPI, and AI-powered metadata enrichment.
 
-Grab supports 11 major platforms with smart format auto-detection, instant downloads, live administrative control switches, and Cloudinary media feeds.
+MediaRift supports 11 major platforms with smart format auto-detection, instant downloads, live administrative control switches, and Cloudinary media feeds.
 
 ---
 

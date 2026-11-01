@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     "Compare MP3, MP4, and M4A formats. Detailed breakdown of audio bitrates (128k, 192k, 320k), video resolutions (up to 4K), device compatibility, and file sizes.",
   alternates: { canonical: "/formats" },
   openGraph: {
-    title: "Grab Format Guide — MP3 vs MP4 vs M4A",
+    title: "MediaRift Format Guide — MP3 vs MP4 vs M4A",
     description:
       "Detailed breakdown of audio bitrates, video resolutions, codecs, and device compatibility.",
     url: "/formats",
@@ -106,8 +106,8 @@ const formatFaqs = [
     a: "We extract audio directly from the source's highest available audio stream and re-encode to clean MP3 at your chosen bitrate. At 192 kbps or 320 kbps, quality is pristine and virtually indistinguishable from the source audio.",
   },
   {
-    q: "Can Grab upscale a 720p video to 1080p or 4K?",
-    a: "No. Grab never artificially invents fake resolution pixels. We inspect the video manifest and display only the authentic resolutions that the original creator uploaded to the platform.",
+    q: "Can MediaRift upscale a 720p video to 1080p or 4K?",
+    a: "No. MediaRift never artificially invents fake resolution pixels. We inspect the video manifest and display only the authentic resolutions that the original creator uploaded to the platform.",
   },
   {
     q: "Why is M4A labeled 'Fast Audio'?",
@@ -384,8 +384,8 @@ export default function FormatsPage() {
               ))}
 
               <div className="rounded-2xl border border-wave/20 bg-wave/5 p-4 text-xs leading-relaxed text-mist">
-                <span className="font-semibold text-wave">Authentic source policy:</span> Grab does
-                not synthesize fake 4K pixels. If a video was recorded in 1080p, Grab caps it at 1080p.
+                <span className="font-semibold text-wave">Authentic source policy:</span> MediaRift does
+                not synthesize fake 4K pixels. If a video was recorded in 1080p, MediaRift caps it at 1080p.
               </div>
             </div>
           </div>

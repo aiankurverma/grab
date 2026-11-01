@@ -40,7 +40,7 @@ const features = [
 const steps = [
   {
     title: "Copy a link",
-    body: "Grab the public link from YouTube, TikTok, Instagram, X, SoundCloud, or any supported site.",
+    body: "Copy the public link from YouTube, TikTok, Instagram, X, SoundCloud, or any supported site.",
   },
   {
     title: "Paste and choose",
@@ -70,7 +70,7 @@ const faqs = [
   ],
   [
     "Can I download in 4K?",
-    "Only when the source offers 4K and the platform supports it. Grab caps each platform at a realistic maximum and shows the source cap before conversion.",
+    "Only when the source offers 4K and the platform supports it. MediaRift caps each platform at a realistic maximum and shows the source cap before conversion.",
   ],
   [
     "Why are some platforms marked beta?",
@@ -362,7 +362,7 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-[1.15fr_1fr]">
             <div className="border-b border-line p-6 sm:p-8 lg:border-b-0 lg:border-r">
               <SectionHeading
-                eyebrow="Why Grab"
+                eyebrow="Why MediaRift"
                 title="Built like a tool, not a trap."
                 body="Downloading a public link should not require guessing which button is real."
                 align="left"
@@ -386,14 +386,14 @@ export default function HomePage() {
                   <div key={title} className="flex gap-3 rounded-xl border border-line/60 bg-ink/40 p-3.5">
                     <span className="mt-1 size-1.5 shrink-0 rounded-full bg-grab" />
                     <div>
-                      <p className="text-[15px] font-medium text-white">{title}</p>
-                      <p className="mt-1 text-xs leading-relaxed text-mist">{body}</p>
+                       <p className="text-[15px] font-medium text-white">{title}</p>
+                       <p className="mt-1 text-xs leading-relaxed text-mist">{body}</p>
                     </div>
                   </div>
                 ))}
               </div>
               <p className="mt-5 rounded-xl border border-amber-400/15 bg-amber-400/5 px-4 py-3.5 text-xs leading-relaxed text-amber-100/85">
-                Grab does not grant rights to content you do not own. Respect creators and the
+                MediaRift does not grant rights to content you do not own. Respect creators and the
                 terms of the source platform.
               </p>
             </div>

@@ -25,7 +25,7 @@ export function BrandMark({ linked = true }: { linked?: boolean }) {
         <span className="absolute -right-0.5 -top-0.5 size-2 rounded-full border border-ink bg-grab" />
       </span>
       <span className="flex flex-col leading-none">
-        <span className="text-lg font-bold tracking-tight text-white">Grab</span>
+        <span className="text-lg font-bold tracking-tight text-white">MediaRift</span>
         <span className="mt-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-mist/70">
           media, simplified
         </span>
@@ -38,7 +38,7 @@ export function BrandMark({ linked = true }: { linked?: boolean }) {
   }
 
   return (
-    <Link href="/" className="inline-flex items-center gap-2.5" aria-label="Grab home">
+    <Link href="/" className="inline-flex items-center gap-2.5" aria-label="MediaRift home">
       {content}
     </Link>
   );

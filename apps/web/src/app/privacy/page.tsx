@@ -4,7 +4,7 @@ import { LegalSection, LegalShell } from "@/components/legal/legal-shell";
 
 export const metadata: Metadata = {
   title: "Privacy",
-  description: "What Grab stores, why it stores it, and how long temporary media is retained.",
+  description: "What MediaRift stores, why it stores it, and how long temporary media is retained.",
   alternates: { canonical: "/privacy" },
 };
 
@@ -13,7 +13,7 @@ export default function PrivacyPage() {
     <LegalShell
       eyebrow="Privacy"
       title="Privacy policy"
-      summary="Grab is designed to keep as little as possible. This page explains the data needed to run a conversion and what happens afterward."
+      summary="MediaRift is designed to keep as little as possible. This page explains the data needed to run a conversion and what happens afterward."
       updated="November 1, 2026"
     >
       <LegalSection title="1. Data we process">
@@ -62,14 +62,14 @@ export default function PrivacyPage() {
       <LegalSection title="6. Your choices">
         <p>
           You can avoid persistent browser history by clearing local storage. To ask about data
-          associated with a conversion, contact privacy@grabwave.app. Do not submit sensitive
+          associated with a conversion, contact privacy@mediarift.store. Do not submit sensitive
           personal or confidential links.
         </p>
       </LegalSection>
 
       <LegalSection title="7. Children and changes">
         <p>
-          Grab is not directed to children under 13. We may update this policy as the service
+          MediaRift is not directed to children under 13. We may update this policy as the service
           changes; the date at the top shows the latest revision.
         </p>
       </LegalSection>

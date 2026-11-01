@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     "Review and re-download your recent media conversions. Stored 100% locally on your device with 6-hour temporary link availability.",
   alternates: { canonical: "/history" },
   openGraph: {
-    title: "Grab Conversion History — Recent Media",
+    title: "MediaRift Conversion History — Recent Media",
     description: "Re-download and manage your recent conversions stored in local browser memory.",
     url: "/history",
     type: "website",

@@ -80,7 +80,7 @@ export function AuthShell({
           </div>
 
           <p className="mt-5 text-center text-[11px] leading-relaxed text-mist/70">
-            Grab stays free while in beta. Your browser history is stored locally on this
+            MediaRift stays free while in beta. Your browser history is stored locally on this
             device.
           </p>
         </div>

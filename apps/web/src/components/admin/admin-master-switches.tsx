@@ -294,7 +294,7 @@ export function AdminMasterSwitches({
 
         {/* Drawer Footer */}
         <div className="pt-4 border-t border-white/10 flex items-center justify-between text-[11px] text-neutral-500">
-          <span>Grabwave Admin Panel</span>
+          <span>MediaRift Admin Panel</span>
           <button
             type="button"
             onClick={() => setIsOpen(false)}

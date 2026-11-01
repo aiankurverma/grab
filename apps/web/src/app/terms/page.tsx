@@ -4,7 +4,7 @@ import { LegalSection, LegalShell } from "@/components/legal/legal-shell";
 
 export const metadata: Metadata = {
   title: "Terms of use",
-  description: "The rules for using Grab, including acceptable use, content rights, and limits.",
+  description: "The rules for using MediaRift, including acceptable use, content rights, and limits.",
   alternates: { canonical: "/terms" },
 };
 
@@ -13,13 +13,13 @@ export default function TermsPage() {
     <LegalShell
       eyebrow="Legal"
       title="Terms of use"
-      summary="These terms explain what Grab does, what you may use it for, and the limits of the service."
+      summary="These terms explain what MediaRift does, what you may use it for, and the limits of the service."
       updated="November 1, 2026"
     >
-      <LegalSection title="1. What Grab does">
+      <LegalSection title="1. What MediaRift does">
         <p>
-          Grab is a link-based media utility. When you submit a supported public URL, we ask the
-          source for available media and prepare an MP3 or MP4 file. Grab is not affiliated with
+          MediaRift is a link-based media utility. When you submit a supported public URL, we ask the
+          source for available media and prepare an MP3 or MP4 file. MediaRift is not affiliated with
           YouTube, Instagram, TikTok, Facebook, X, Vimeo, SoundCloud, Reddit, Twitch, Dailymotion,
           Pinterest, or any other source platform.
         </p>
@@ -27,12 +27,12 @@ export default function TermsPage() {
 
       <LegalSection title="2. Your responsibility">
         <p>
-          You may use Grab only for media you own, media licensed to you, or media you otherwise
+          You may use MediaRift only for media you own, media licensed to you, or media you otherwise
           have permission to download. You are responsible for complying with copyright law and the
           terms of the source platform.
         </p>
         <p>
-          Do not use Grab to access private, paid, login-walled, or DRM-protected content; to
+          Do not use MediaRift to access private, paid, login-walled, or DRM-protected content; to
           redistribute infringing files; or to interfere with the service, its workers, or other
           users.
         </p>
@@ -52,15 +52,15 @@ export default function TermsPage() {
 
       <LegalSection title="4. Intellectual property">
         <p>
-          Grab does not claim ownership of the media you submit. You retain whatever rights you
-          already hold. The Grab name, interface, and original site content remain our property
+          MediaRift does not claim ownership of the media you submit. You retain whatever rights you
+          already hold. The MediaRift name, interface, and original site content remain our property
           or that of our licensors.
         </p>
       </LegalSection>
 
       <LegalSection title="5. Disclaimers and limitation">
         <p>
-          To the maximum extent permitted by law, Grab disclaims warranties of merchantability,
+          To the maximum extent permitted by law, MediaRift disclaims warranties of merchantability,
           fitness for a particular purpose, and non-infringement. We are not liable for indirect,
           incidental, special, consequential, or punitive damages, or for lost data, profits, or
           goodwill.
@@ -70,7 +70,7 @@ export default function TermsPage() {
       <LegalSection title="6. Changes and contact">
         <p>
           We may update these terms as the service changes. Continued use after an update means you
-          accept the revised terms. Questions can be sent to support@grabwave.app.
+          accept the revised terms. Questions can be sent to support@mediarift.store.
         </p>
       </LegalSection>
     </LegalShell>

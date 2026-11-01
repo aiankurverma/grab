@@ -8,10 +8,10 @@ import { FAQClient } from "@/app/faq/faq-client";
 export const metadata: Metadata = {
   title: "Questions & FAQ · Straight Answers on Formats, Platforms & Limits",
   description:
-    "Find answers about Grab conversion limits, MP3 vs MP4 quality, supported platforms, privacy retention policies, and troubleshooting.",
+    "Find answers about MediaRift conversion limits, MP3 vs MP4 quality, supported platforms, privacy retention policies, and troubleshooting.",
   alternates: { canonical: "/faq" },
   openGraph: {
-    title: "Grab FAQ — Straight Answers to Everything",
+    title: "MediaRift FAQ — Straight Answers to Everything",
     description:
       "Limits, audio & video bitrates, platform support, 6-hour expiry, and troubleshooting answers.",
     url: "/faq",
@@ -32,7 +32,7 @@ export default function FAQPage() {
         <SectionHeading
           eyebrow="Help & Knowledge Base"
           title="Frequently Asked Questions."
-          body="Straight answers on quality limits, platform quirks, privacy, and how Grab extracts your media."
+          body="Straight answers on quality limits, platform quirks, privacy, and how MediaRift extracts your media."
         />
 
         <div className="mt-10">

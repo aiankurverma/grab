@@ -63,5 +63,5 @@ export function safeDownloadName(title: string, extension: string): string {
     .replace(/-+/g, "-")
     .replace(/^[.-]+|[.-]+$/g, "")
     .slice(0, 90);
-  return `${base || "grabwave-download"}.${extension}`;
+  return `${base || "mediarift-download"}.${extension}`;
 }

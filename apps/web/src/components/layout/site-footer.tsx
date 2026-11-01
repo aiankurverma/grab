@@ -82,7 +82,7 @@ export function SiteFooter() {
 
       <div className="border-t border-line/70">
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-2 px-4 py-5 text-[13px] text-mist/60 sm:flex-row sm:items-center sm:justify-between sm:px-6">
-          <p>© {new Date().getFullYear()} Grab. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} MediaRift. All rights reserved.</p>
           <p>Built for the links you own or have permission to use.</p>
         </div>
       </div>
