@@ -1,0 +1,22 @@
+{
+  "name": "grabwave",
+  "version": "0.1.0",
+  "private": true,
+  "description": "YouTube and Instagram media converter (MP3/MP4) built with Next.js and a Python worker.",
+  "packageManager": "pnpm@10.34.6",
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "scripts": {
+    "dev": "pnpm --filter web dev",
+    "build": "pnpm --filter web build",
+    "start": "pnpm --filter web start",
+    "lint": "pnpm -r --if-present lint",
+    "typecheck": "pnpm -r --if-present typecheck",
+    "test": "pnpm -r --if-present test",
+    "infra:up": "docker compose up -d postgres redis minio",
+    "infra:down": "docker compose down",
+    "worker:up": "docker compose up -d --build worker",
+    "stack:up": "docker compose up -d --build"
+  }
+}

@@ -1,0 +1,70 @@
+# dependencies
+node_modules/
+.pnpm-store/
+
+# builds
+.next/
+out/
+dist/
+build/
+*.tsbuildinfo
+
+# env
+.env
+.env.local
+.env.*.local
+**/.env
+**/.env.local
+**/.env.*.local
+!.env.example
+!**/.env.example
+
+# python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# media / temp
+tmp/
+media/
+downloads/
+*.mp3
+*.mp4
+*.m4a
+*.webm
+*.jpg
+*.png
+*.jpeg
+*.webp
+cookies.txt
+
+# testing
+playwright-report/
+test-results/
+coverage/
+
+# infra
+data/
+minio-data/
+
+# editor / os
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# runtime dynamic state
+system-controls.json
+**/system-controls.json
+*.pem
+*.key
+

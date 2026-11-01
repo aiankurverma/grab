@@ -1,0 +1,87 @@
+name: grabwave
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-grabwave}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-grabwave}
+      POSTGRES_DB: ${POSTGRES_DB:-grabwave}
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-grabwave} -d ${POSTGRES_DB:-grabwave}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - redisdata:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  worker:
+    build:
+      context: ./apps/worker
+    restart: unless-stopped
+    command: ["python", "-m", "app.worker"]
+    env_file:
+      - .env
+    environment:
+      APP_ENV: ${APP_ENV:-development}
+      APP_URL: ${APP_URL:-http://localhost:3000}
+      REDIS_URL: redis://redis:6379/0
+      DATABASE_URL: postgresql://${POSTGRES_USER:-grabwave}:${POSTGRES_PASSWORD:-grabwave}@postgres:5432/${POSTGRES_DB:-grabwave}
+      WEB_INTERNAL_URL: http://web:3000
+      STORAGE_DRIVER: local
+      INLINE_JOBS: "false"
+      TMP_DIR: /tmp/grabwave
+    depends_on:
+      redis:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+      web:
+        condition: service_started
+    volumes:
+      - workertmp:/tmp/grabwave
+    ports:
+      - "127.0.0.1:8000:8000"
+
+  web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      NODE_ENV: production
+      DATABASE_URL: postgresql://${POSTGRES_USER:-grabwave}:${POSTGRES_PASSWORD:-grabwave}@postgres:5432/${POSTGRES_DB:-grabwave}
+      REDIS_URL: redis://redis:6379/0
+      WORKER_URL: http://worker:8000
+      MEDIA_ROOT: /tmp/grabwave/media
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - workertmp:/tmp/grabwave:ro
+    ports:
+      - "3000:3000"
+
+volumes:
+  pgdata:
+  redisdata:
+  workertmp:
