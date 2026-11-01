@@ -1,6 +1,6 @@
 # Grab
 
-A high-performance, multi-platform media converter and downloader built with Next.js 16, Python 3.13 FastAPI, yt-dlp, and Inception Labs Mercury-3 AI.
+A high-performance, multi-platform media converter and downloader built with Next.js 16, Python 3.13 FastAPI, and Inception Labs Mercury-3 AI.
 
 Grab supports 11 major platforms with smart format auto-detection, instant downloads, live administrative control switches, and Cloudinary media feeds.
 
@@ -32,7 +32,7 @@ flowchart TD
     User["🌐 User / Browser"] --> Web["⚡ Next.js 16 App Router (apps/web)"]
     Web --> DB[("🐘 PostgreSQL (Prisma)")]
     Web --> Worker["🐍 Python 3.13 Worker (apps/worker)"]
-    Worker --> YTDLP["📥 yt-dlp & FFmpeg"]
+    Worker --> YTDLP["✕ Core Downloader"]
     Worker --> Mercury["🧠 Mercury-3 AI (Inception Labs)"]
     Worker --> Cloudinary["☁️ Cloudinary Storage"]
     Cloudinary --> Web
@@ -41,7 +41,7 @@ flowchart TD
 | Component | Technology | Path |
 |---|---|---|
 | **Web Service** | Next.js 16 (App Router), React 19, Tailwind CSS, Prisma | `apps/web/` |
-| **Worker Service** | Python 3.13, FastAPI, yt-dlp, FFmpeg | `apps/worker/` |
+| **Worker Service** | Python 3.13, FastAPI | `apps/worker/` |
 | **AI Engine** | Inception Labs Mercury-3 (`/v1/chat/completions`) | `apps/worker/app/infrastructure/ai/` |
 | **Admin Panel** | Server-Sent Heartbeats, Slide-Over Controls Drawer | `apps/web/src/app/admin/insights/` |
 
@@ -53,7 +53,6 @@ flowchart TD
 - **Node.js**: 20.x or higher
 - **pnpm**: `corepack enable && pnpm --version`
 - **Python**: 3.13+
-- **FFmpeg**: Installed and available in your `PATH`
 
 ### 2. Installation
 
