@@ -14,18 +14,19 @@ const DEFAULT_CONTROLS: SystemControls = {
 };
 
 function getCandidatePaths(): string[] {
+  const cwd = process.cwd();
   return [
-    path.join(process.cwd(), "system-controls.json"),
-    path.join(process.cwd(), "apps", "web", "system-controls.json"),
-    path.resolve(__dirname, "..", "..", "system-controls.json"),
+    path.join(cwd, "system-controls.json"),
+    path.join(cwd, "apps", "web", "system-controls.json"),
+    path.join(cwd, ".system-controls.json"),
   ];
 }
 
 export function getSystemControls(): SystemControls {
   for (const p of getCandidatePaths()) {
     try {
-      if (fs.existsSync(p)) {
-        const raw = fs.readFileSync(p, "utf-8");
+      if (fs.existsSync(/* turbopackIgnore: true */ p)) {
+        const raw = fs.readFileSync(/* turbopackIgnore: true */ p, "utf-8");
         const parsed = JSON.parse(raw) as Partial<SystemControls>;
         if (parsed && Array.isArray(parsed.disabledPlatforms)) {
           return {
@@ -55,8 +56,8 @@ export function saveSystemControls(next: Partial<SystemControls>): SystemControl
   for (const p of getCandidatePaths()) {
     try {
       const dir = path.dirname(p);
-      if (fs.existsSync(dir)) {
-        fs.writeFileSync(p, JSON.stringify(updated, null, 2), "utf-8");
+      if (fs.existsSync(/* turbopackIgnore: true */ dir)) {
+        fs.writeFileSync(/* turbopackIgnore: true */ p, JSON.stringify(updated, null, 2), "utf-8");
       }
     } catch {
       // ignore
